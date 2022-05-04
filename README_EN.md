@@ -1,3 +1,5 @@
+This is an automatic translation, may be incorrect in some places. See sources and examples!
+
 # UnixTime
 Converter unix time stamp to date and time and vice versa for Arduino. Based on:
 - https://www.oryx-embedded.com/doc/date__time_8c_source.html

@@ -9,6 +9,7 @@
 Конвертер unix time stamp в дату и время и наоборот для Arduino. Основано на:
 - https://www.oryx-embedded.com/doc/date__time_8c_source.html
 - https://stackoverflow.com/questions/7960318/math-to-convert-seconds-since-1970-into-date-and-vice-versa
+- http://howardhinnant.github.io/date_algorithms.html#civil_from_days
 
 ### Совместимость
 Совместима со всеми Arduino платформами (используются Arduino-функции)

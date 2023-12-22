@@ -1,106 +1,122 @@
 This is an automatic translation, may be incorrect in some places. See sources and examples!
 
-# UnixTime
-Converter unix time stamp to date and time and vice versa for Arduino. Based on:
-- https://www.oryx-embedded.com/doc/date__time_8c_source.html
-- https://stackoverflow.com/questions/7960318/math-to-convert-seconds-since-1970-into-date-and- vice- versa
+# Unixtime
+UNIX Time Stamp converter in date and time and vice versa for Arduino.Based on:
+- https://www.oryx-meded.com/doc/date__time_8c_Source.html
+-https://stackoveerflow.com/questions/7960318/math-to-Convert-Seconds-sincE-1970-Date-Date-VICE-VIRSA
+- http://lowardhinnant.github.io/date_algorithms.html#civil_from_days
 
-### Compatibility
-Compatible with all Arduino platforms (using Arduino functions)
+## compatibility
+Compatible with all arduino platforms (used arduino functions)
 
 ## Content
-- [Install](#install)
-- [Initialization](#init)
-- [Usage](#usage)
-- [Example](#example)
-- [Versions](#versions)
-- [Bugs and feedback](#feedback)
+- [installation] (# Install)
+- [initialization] (#init)
+- [use] (#usage)
+- [Example] (# Example)
+- [versions] (#varsions)
+- [bugs and feedback] (#fedback)
 
-<a id="install"></a>
+<a id="install"> </a>
 ## Installation
-- The library can be found under the name **UnixTime** and installed via the library manager in:
-    - Arduino IDE
-    - Arduino IDE v2
-    - PlatformIO
-- [Download Library](https://github.com/GyverLibs/UnixTime/archive/refs/heads/main.zip) .zip archive for manual installation:
-    - Unzip and put in *C:\Program Files (x86)\Arduino\libraries* (Windows x64)
-    - Unzip and put in *C:\Program Files\Arduino\libraries* (Windows x32)
-    - Unpack and put in *Documents/Arduino/libraries/*
-    - (Arduino IDE) automatic installation from .zip: *Sketch/Include library/Add .ZIP library…* and specify the downloaded archive
-- Read more detailed instructions for installing libraries [here] (https://alexgyver.ru/arduino-first/#%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE% D0%B2%D0%BA%D0%B0_%D0%B1%D0%B8%D0%B1%D0%BB%D0%B8%D0%BE%D1%82%D0%B5%D0%BA)
+- The library can be found by the name ** unixtime ** and installed through the library manager in:
+    - Arduino ide
+    - Arduino ide v2
+    - Platformio
+- [download the library] (https://github.com/gyverlibs/unixtime/archive/refs/heads/main.zip) .Zip archive for manual installation:
+    - unpack and put in * C: \ Program Files (X86) \ Arduino \ Libraries * (Windows X64)
+    - unpack and put in * C: \ Program Files \ Arduino \ Libraries * (Windows X32)
+    - unpack and put in *documents/arduino/libraries/ *
+    - (Arduino id) Automatic installation from. Zip: * sketch/connect the library/add .Zip library ... * and specify downloaded archive
+- Read more detailed instructions for installing libraries [here] (https://alexgyver.ru/arduino-first/#%D0%A3%D1%81%D1%82%D0%B0%BD%D0%BE%BE%BE%BED0%B2%D0%BA%D0%B0_%D0%B1%D0%B8%D0%B1%D0%BB%D0%B8%D0%BE%D1%82%D0%B5%D0%BA)
+### Update
+- I recommend always updating the library: errors and bugs are corrected in the new versions, as well as optimization and new features are added
+- through the IDE library manager: find the library how to install and click "update"
+- Manually: ** remove the folder with the old version **, and then put a new one in its place.“Replacement” cannot be done: sometimes in new versions, files that remain when replacing are deleted and can lead to errors!
 
-<a id="init"></a>
-## Initialization
-```cpp
-UnixTimestamp(3); // specify GMT (for example, 3 for Moscow)
-```
 
-<a id="usage"></a>
+<a id="init"> </a>
+## initialization
+`` `CPP
+Unixtime Stamp (3);// specify GMT (for example 3 for Moscow)
+`` `
+
+<a id="usage"> </a>
 ## Usage
-```cpp
-uint32_t getUnix(); // get unix stamp from set date and time
-void getDateTime(uint32_t t); // convert unix stamp date and time (to class member variables)
+`` `CPP
+uint32_t getunix ();// Get Unix Stamp from the set date and time
+VOID Getdatetime (Uint32_T T);// Convert UNIX Stamp Date and Time (in variable class members)
     
-// setting the date and time (more convenient than writing variables in the wild)
-void setDateTime(uint16_t nyear, uint8_t nmonth, uint8_t nday, uint8_t nhour, uint8_t nminute, uint8_t nsecond);
+// setting the date and time (more convenient than writing VURT variables)
+VOID Setdetetime (Uint16_T Nyear, Uint8_T NMONTH, UINT8_T NDAY, UINT8_T NHOUR, UINT8_T NMINUTE, UINT8_T NSECOND);
 
-// date and time variables
+// variable dates and time
 uint16_t year;
-uint8_tmonth;
+uint8_t months;
 uint8_t day;
-uint8_t hour;
+Uint8_t Hour;
 uint8_t minute;
 uint8_t second;
-uint8_tdayOfWeek;
-```
+uint8_t dayofweek;
+`` `
 
-<a id="example"></a>
+<a id="EXAMPLE"> </a>
 ## Example
-See **examples** for other examples!
-```cpp
-#include <UnixTime.h>
+The rest of the examples look at ** Examples **!
+`` `CPP
+#include <unixtime.h>
 
-UnixTimestamp(3); // specify GMT (3 for Moscow)
+Unixtime Stamp (3);// specify GMT (3 for Moscow)
 
-void setup() {
-  Serial.begin(9600);
-  // ========= Date and time in UNIX ==========
-  // setting the date and time of the library through the setDateTime function
-  // setDateTime(year, month (since 1), day (since 1), hour, minute, second);
-  // either stamp.year = 2021 and so on
-  //stamp.setDateTime(2021, 1, 1, 0, 0, 0);
-  stamp.setDateTime(2021, 5, 20, 7, 4, 15); // May 20, 2021, 07:04:15
+VOID setup () {
+  Serial.Begin (9600);
+  // ========= The date and time in unix =============
+  // Installation of the date and time of the library through the Setdatetime function
+  // setdateetime (year, month (from 1), day (from 1), hour, minute, second);
+  // or Stamp.year = 2021 and so on
+  //stamp.setdetetime(2021, 1, 1, 0, 0, 0);
+  Stamp.Setdetetime (2021, 5, 20, 7, 4, 15);// 20 May 2021, 7:04:15
 
-  // getUnix() - get unix time (running ~56 us on AVR)
-  uint32_t unix = stamp.getUnix();
-  Serial.println(unix);
+  // getunix () - get unix time (executed ~ 56 us on avr)
+  uint32_T Unix = Stamp.getunix ();
+  Serial.println (unix);
 
-  // ========= UNIX to date and time ==========
-  // convert unix to date and time
-  // getDateTime(unix stamp) runs ~500 us on AVR
+  // ========== Unix in date and time =============
+  // Convert UNIX on date and time
+  // getdetetime (unix Stamp) is performed ~ 500 us on avr
   // https://www.unixtimestamp.com/index.php
-  stamp.getDateTime(1621497944);
+  Stamp.getDetetime (1621497944);
 
-  // grab like this
-  serial.println(stamp.year);
-  Serial.println(stamp.month);
-  serial.println(stamp.day);
-  Serial.println(stamp.hour);
-  serial.println(stamp.minute);
-  serial.println(stamp.second);
-  Serial.println(stamp.dayOfWeek); // Monday 1st, Sunday 7th
+  // Take it like this
+  Serial.println (Stamp.year);
+  Serial.println (Stamp.month);
+  Serial.println (Stamp.day);
+  Serial.println (Stamp.hour);
+  Serial.println (Stamp.minute);
+  Serial.println (Stamp.Second);
+  Serial.println (Stamp.Dayofweek);// 1 Monday, 7 Sunday
 }
 
-void loop() {
+VOID loop () {
 }
-```
+`` `
 
-<a id="versions"></a>
-## Versions
-- v1.0
-- v1.1 - optimization
+<a id="versions"> </a>
+## versions
+- V1.0
+- V1.1 - Optimization
 
-<a id="feedback"></a>
-## Bugs and feedback
-When finding bugs, create **Issue**, or better yet, piSend cranberries to mail [alex@alexgyver.ru](mailto:alex@alexgyver.ru)
-The library is open for revision and your **Pull Request**'s!
+<a id="feedback"> </a>
+## bugs and feedback
+Create ** Issue ** when you find the bugs, and better immediately write to the mail [alex@alexgyver.ru] (mailto: alex@alexgyver.ru)
+The library is open for refinement and your ** pull Request ** 'ow!
+
+
+When reporting about bugs or incorrect work of the library, it is necessary to indicate:
+- The version of the library
+- What is MK used
+- SDK version (for ESP)
+- version of Arduino ide
+- whether the built -in examples work correctly, in which the functions and designs are used, leading to a bug in your code
+- what code has been loaded, what work was expected from it and how it works in reality
+- Ideally, attach the minimum code in which the bug is observed.Not a canvas of a thousand lines, but a minimum code
